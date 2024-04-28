@@ -1,0 +1,148 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+.page_actions_container {
+	height: 3rem;
+	background-color: #2ed573;
+	display: flex;
+	align-items: flex-end;
+	padding: 0.5rem;
+}
+.page_action {
+	margin: 0.5rem;
+	color: #ffffff;
+}
+.cellprops_actions_container {
+	height: 3rem;
+	background-color: #f3f8fa;
+	display: flex;
+	align-items: center;
+	padding-left: 1rem;
+}
+.cellprops_actions_container span {
+	margin-right: 1rem;
+}
+.font_family_prop {
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	margin-right: 0.5rem;
+}
+.font_size_prop {
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	margin-right: 0.5rem;
+}
+.formula_actions_container {
+	height: 2rem;
+	background-color: #f3f8fa;
+	padding-left: 0.5rem;
+	display: flex;
+	align-items: center;
+}
+.formula_actions_container > * {
+	display: inline-block;
+	margin-right: 1rem;
+}
+.formula_actions_container > input {
+	border: none;
+	outline: none;
+	height: 70%;
+}
+.address_bar{
+	width: 5rem;
+	text-align: center;
+}
+.formula_bar{
+	width: calc(100% - 5rem - 1rem - 1rem - 1rem - 0.5rem);
+}
+.formula_icon{
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.sheet_actions_container {
+	height: 3rem;
+	background-color: #e8f2f6;
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+	gap: 1rem;
+}
+.sheet_actions_container > * {
+	display: inline-block;
+}
+.sheet_add_icon {
+	width: 2rem;
+}
+.sheets_folder_container {
+	height: 2rem;
+	width: calc(100vw - 2rem);
+	display: flex;
+	align-items: center;
+}
+.sheet_folder {
+	text-decoration: underline;
+	text-decoration-thickness: 3px;
+	text-decoration-color: rgb(67, 65, 65);
+	font-weight: bold;
+}
+.grid_container {
+	height: calc(100vh - 3rem - 3rem - 2rem - 3rem);
+	background-color: #f3f8fa;
+	position: relative;
+	overflow: scroll;
+}
+.top_left_dummy_box {
+	width: 2rem;
+	height: 2rem;
+	background-color: rgb(176, 176, 180);
+	position: fixed;
+	z-index: 10;
+}
+.address_col_container {
+	margin-top: 2rem;
+	position: sticky;
+	top: 2rem;
+	left: 0;
+}
+.cells_container {
+	position: absolute;
+	top: 0;
+	left: 2rem;
+}
+.address_row_container {
+	display: flex;
+	position: sticky;
+	top: 0;
+	left: 2rem;
+}
+.addressCol {
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	border: 1px solid rgb(241, 234, 234);
+	position: sticky;
+	
+}
+.addressRow {
+	width: 7rem;
+	height: 2rem;
+	border: 1px solid rgb(241, 234, 234);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rowContainer {
+	display: flex;
+}
+.cell {
+	width: 7rem;
+	height: 2rem;
+	border: 1px solid rgb(225, 217, 217);
+	outline: none;
+}
