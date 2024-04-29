@@ -38,27 +38,39 @@
         <select class="font_size_prop">
             <option value="14">14</option>
             <option value="16">16</option>
-            <option value="18">8</option>
+            <option value="18">18</option>
             <option value="20">20</option>
         </select>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined bold">
             format_bold
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined italic">
             format_italic
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined underline">
             format_underlined
         </span>
-        <span class="material-symbols-outlined">
+        <span class="left material-symbols-outlined alignment">
             format_align_left
         </span>
-        <span class="material-symbols-outlined">
+        <span class="center material-symbols-outlined alignment">
             format_align_center
         </span>
-        <span class="material-symbols-outlined">
+        <span class="right material-symbols-outlined alignment">
             format_align_right
         </span>
+        <div class="color_prop">
+            <span class="material-symbols-outlined">
+                format_color_text
+            </span>
+            <input type="color" class="fontColor">
+        </div>
+        <div class="color_prop">
+            <span class="material-symbols-outlined">
+                format_color_fill
+            </span>
+            <input type="color" class="bgColor">
+        </div>   
     </div>
     <div class="formula_actions_container">
         <input type="text" class="address_bar">
@@ -81,10 +93,10 @@
         <div class="sheets_folder_container">
             <div class="sheet_folder">Sheet1</div>
         </div>
-
     </div>
 
     <script src="./script.js"></script>
+    <script src="./cell-properties.js"></script>
 </body>
 
 </html>
