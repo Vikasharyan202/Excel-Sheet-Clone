@@ -26,6 +26,16 @@ formulaBar.addEventListener("keydown", (e) => {
         let address = addressBar.value;
         let [cell, cellPropObj] = getCellAndCellProp(address);
         if(inputFormula !== cellPropObj.formula) removeChildFromParent(cellPropObj.formula);
+   
+        addChildToGraphComponent(inputFormula, address);
+        // check formula is cyclic or not, then evaluate
+        // True : cyclic, False : not cyclic
+        let isCyclic = isGraphCyclic(graphComponentMatrix);
+        if(isCyclic === true) {
+            alert("Your formula is cyclic");
+            removeChildFromGraphComponent(inputFormula, address);
+            return;
+        }
 
         let evaluatedValue = evaulateFormula(inputFormula);
 
@@ -36,6 +46,30 @@ formulaBar.addEventListener("keydown", (e) => {
         updateChildrenCells(address)
     }
 })
+
+function addChildToGraphComponent(formula, childAddress) {
+    let [crowId, cColId] = decodeRowIdColIdFromAddress(childAddress);
+    let encodedFormula = formula.split(" ");
+    for(let i = 0; i < encodedFormula.length; i++) {
+        let asciiValue = encodedFormula[i].charCodeAt(0);
+        if(asciiValue >= 65 && asciiValue <= 90) {
+            let [prowId, pColId] = decodeRowIdColIdFromAddress(encodedFormula[i]);
+            graphComponentMatrix[prowId][pColId].push([crowId, cColId]);
+        }
+    }
+}
+
+function removeChildFromGraphComponent(formula, childAddress) {
+    let [crowId, cColId] = decodeRowIdColIdFromAddress(childAddress);
+    let encodedFormula = formula.split(" ");
+    for(let i = 0; i < encodedFormula.length; i++) {
+        let asciiValue = encodedFormula[i].charCodeAt(0);
+        if(asciiValue >= 65 && asciiValue <= 90) {
+            let [prowId, pColId] = decodeRowIdColIdFromAddress(encodedFormula[i]);
+            graphComponentMatrix[prowId][pColId].pop();
+        }
+    }
+}
 
 function updateChildrenCells(parentAddress) {
     let [parentCell, parentCellProp] = getCellAndCellProp(parentAddress);
