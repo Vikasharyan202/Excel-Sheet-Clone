@@ -31,11 +31,11 @@ function isGraphCyclic(graphComponentMatrix) {
             if(visited[i][j] === false) {
                 let response = dfsCyclicDetection(graphComponentMatrix, i, j, visited, dfsVisited);
             // Found cycle so return immediately, no need to explore more path
-            if(response == true) return true;
+            if(response == true) return [i, j];
             }
         }
     }
-    return false;
+    return null;
 }
 
 // Start -> vis(True) dfsVis(True)

@@ -18,7 +18,7 @@ for(let i = 0; i < rows; i++) {
 }
 
 let formulaBar = document.querySelector(".formula_bar");
-formulaBar.addEventListener("keydown", (e) => {
+formulaBar.addEventListener("keydown", async (e) => {
     let inputFormula = formulaBar.value;
     if(e.key == "Enter" && inputFormula) {
 
@@ -30,9 +30,15 @@ formulaBar.addEventListener("keydown", (e) => {
         addChildToGraphComponent(inputFormula, address);
         // check formula is cyclic or not, then evaluate
         // True : cyclic, False : not cyclic
-        let isCyclic = isGraphCyclic(graphComponentMatrix);
-        if(isCyclic === true) {
-            alert("Your formula is cyclic");
+        let cycleResponse = isGraphCyclic(graphComponentMatrix);
+        if(cycleResponse) {
+            // alert("Your formula is cyclic");
+            let response = confirm("Your formula is cyclic. Do you want to trace your path?");
+            while(response === true) {
+                // Keep on tracking color until user is satisfied
+                await isGraphCyclicTracePath(graphComponentMatrix, cycleResponse);
+                response = confirm("Your formula is cyclic. Do you want to trace your path?")
+            }
             removeChildFromGraphComponent(inputFormula, address);
             return;
         }
