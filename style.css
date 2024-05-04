@@ -77,20 +77,36 @@ body {
 	display: inline-block;
 }
 .sheet_add_icon {
-	width: 2rem;
+	width: 2vw;
+}
+.sheet_add_icon:hover {
+	cursor: pointer;
 }
 .sheets_folder_container {
-	height: 2rem;
+	height: 80%;
 	width: calc(100vw - 2rem);
 	display: flex;
 	align-items: center;
+	overflow: auto;
 }
 .sheet_folder {
+	height: 80%;
 	text-decoration: underline;
 	text-decoration-thickness: 3px;
 	text-decoration-color: rgb(67, 65, 65);
 	font-weight: bold;
+	cursor: default;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
 }
+.sheet_content {
+	width: 5rem;
+	/* height: 80%; */
+	text-align: center;
+}
+
 .grid_container {
 	height: calc(100vh - 3rem - 3rem - 2rem - 3rem);
 	background-color: #f3f8fa;

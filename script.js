@@ -44,6 +44,4 @@ function addListenerForAddressBarDisplay(cell, i , j) {
     })
 }
 
-//By defalult Atteched first cell
-let firstCell = document.querySelector(".cell");
-firstCell.click();
+

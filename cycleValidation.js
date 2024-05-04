@@ -1,13 +1,14 @@
 // Storage -> 2d array
+let collectedGraphComponent = [];
 let graphComponentMatrix = [];
 
-for (let i = 0; i < rows; i++) {
-    let row = [];
-    for (let j = 0; j < columns; j++) {
-        row.push([]);
-    }
-    graphComponentMatrix.push(row);
-}
+// for (let i = 0; i < rows; i++) {
+//     let row = [];
+//     for (let j = 0; j < columns; j++) {
+//         row.push([]);
+//     }
+//     graphComponentMatrix.push(row);
+// }
 
 // True -> cyclic, False -> not cyclic
 function isGraphCyclic(graphComponentMatrix) {
