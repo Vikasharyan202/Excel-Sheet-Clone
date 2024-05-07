@@ -8,27 +8,6 @@ let sheetDataBase = [];
     // heandleSheetProperties();
 }
 
-// for(let i = 0; i < rows; i++) {
-//     let sheetRow = [];
-//     for(let j = 0; j < columns; j++) {
-//         let cellPropObj = {
-//             bold: false,
-//             italic: false,
-//             underline: false,
-//             alignment: "left", 
-//             fontFamily: "sans-sarif",
-//             fontSize: "14",
-//             fontColor: "#000000",
-//             bgColor: "#000000",
-//             value: "",
-//             formula: "",
-//             children: [],
-//         };
-//         sheetRow.push(cellPropObj);
-//     }
-//     sheetDataBase.push(sheetRow);
-// }
-
 // Selectors for cell properties
 let bold = document.querySelector(".bold");
 let italic = document.querySelector(".italic");
